@@ -2,6 +2,8 @@
 
 defined( 'ABSPATH' ) || exit;
 
+add_action( 'rpuc/init', fn() => new PackageUpgrader\V1\Plugin );
+
 add_action( 'plugins_loaded', function () {
 	\Render\Autoload\ClassLoader::getInstance();
 }, PHP_INT_MIN );
