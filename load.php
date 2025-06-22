@@ -3,10 +3,6 @@
 defined( 'ABSPATH' ) || exit;
 
 add_action( 'plugins_loaded', function () {
-	\Render\Autoload\ClassLoader::getInstance();
-}, PHP_INT_MIN );
-
-add_action( 'plugins_loaded', function () {
 	if ( is_admin() ) {
 		\ErrorLogViewer\ErrorLogViewer::get_instance();
 	}

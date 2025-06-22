@@ -1,6 +1,6 @@
 {
 	"name": "pfaciana/php-error-log-viewer",
-	"version": "1.1.2",
+	"version": "1.2.0",
 	"description": "A WordPress plugin that provides an interface to view, manage, and analyze PHP error logs across your WordPress installation.",
 	"keywords": [],
 	"homepage": "https://renderdev.com/",
@@ -22,7 +22,10 @@
 			"License": "GPLv2 only",
 			"License URI": "https://www.gnu.org/licenses/old-licenses/gpl-2.0.html"
 		},
-		"main-file-append": "add_action( 'rpuc/init', fn() => new PackageUpgrader\\V1\\Plugin );"
+		"main-file-append": [
+			"\\add_action( 'plugins_loaded', fn() => \\Render\\Autoload\\ClassLoader::getInstance(), PHP_INT_MIN );\n",
+			"\\add_action( 'rpuc/init', fn() => new \\PackageUpgrader\\V1\\Plugin );"
+		]
 	},
 	"autoload": {
 		"psr-4": {
@@ -33,8 +36,9 @@
 		]
 	},
 	"require": {
-		"php": ">=7.4",
+		"php": ">=8.0",
 		"pfaciana/composer-smart-autoloader": "^1",
-		"pfaciana/wp-update-checker": "^1"
+		"pfaciana/wp-update-checker": "^1",
+		"pfaciana/wp-helpers": "^1.0"
 	}
 }
