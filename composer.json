@@ -1,6 +1,6 @@
 {
 	"name": "pfaciana/php-error-log-viewer",
-	"version": "1.2.0",
+	"version": "1.2.1",
 	"description": "A WordPress plugin that provides an interface to view, manage, and analyze PHP error logs across your WordPress installation.",
 	"keywords": [],
 	"homepage": "https://renderdev.com/",
